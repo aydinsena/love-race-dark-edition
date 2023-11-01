@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love in Berlin: Dark Edition</title>
     <link rel="stylesheet" type="text/css" href="game.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
     <script src="game.js"></script>
     <script src="switchScreens.js"></script>
 </head>
 <body>
     <div id="start-screen">
-        <button id="start-button">Start the game</button>
+        <p>Welcome to a game with a meaningful purpose: protecting women from male species in the dating realm.
+         In this game, flags are categorized based on historical data, adding an extra layer of security.
+         For my personal retribution, some unique flags have been incorporated. So, dive in and enjoy the game to the fullest.</p>
+        <div class="centered-start-button"><button class="start-button" onclick="switchScreens()">START</button></div>
     </div>
     <div id="game-screen">
     <div class="score-board">
@@ -20,7 +24,7 @@
     <div class="red-flags"></div>
     <div class="green-flags"></div>
     <div class="background"></div>
-    <div class="character main-character"><span>Victim</span></div>
-</div>
+    <div class="victim main-victim"><span>Victim</span></div>
+    </div>
 </body>
 </html>
