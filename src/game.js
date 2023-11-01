@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const mainCharacter = document.querySelector('.main-character');
+  const mainVictim = document.querySelector('.main-victim');
   const stepSize = 100;
   const windowWidth = window.innerWidth;
-  const characterHeight = mainCharacter.clientHeight;
 
-  let characterX = (windowWidth - mainCharacter.clientWidth) / 2; // Center the character horizontally
+  let victimX = (windowWidth - mainVictim.clientWidth) / 2; // Center the victim horizontally
 
-  // Function to update character position
-  const updateMainCharacterPosition = () => {
-    mainCharacter.style.left = characterX + 'px';
+  // Function to update victim position
+  const updateMainVictimPosition = () => {
+    mainVictim.style.left = victimX + 'px';
   };
 
   // Initialize the score
@@ -32,11 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     container.appendChild(flag);
 
-    // Move the flag towards the character
+    // Move the flag towards the victim
     moveFlag(flag, type);
   };
 
-  // Function to move the flag towards the character
+  // Function to move the flag towards the victim
   const moveFlag = (flag, type) => {
     const flagSpeed = 5; 
 
@@ -44,16 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const flagY = parseInt(flag.style.top);
       const flagX = parseInt(flag.style.left);
 
-      // Calculate the bounding boxes for character and flag
-      const characterRect = mainCharacter.getBoundingClientRect();
+      // Calculate the bounding boxes for victim and flag
+      const victimRect = mainVictim.getBoundingClientRect();
       const flagRect = flag.getBoundingClientRect();
 
-      // Check for collision between character and flag
+      // Check for collision between victim and flag
       if (
-        characterRect.right > flagRect.left &&
-        characterRect.left < flagRect.right &&
-        characterRect.bottom > flagRect.top &&
-        characterRect.top < flagRect.bottom
+        victimRect.right > flagRect.left &&
+        victimRect.left < flagRect.right &&
+        victimRect.bottom > flagRect.top &&
+        victimRect.top < flagRect.bottom
       ) {
         // Collision with a flag
         if (type === 'red') {
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(flagInterval);
       }
 
-      // Move the flag vertically towards the character
+      // Move the flag vertically towards the victim
       flag.style.top = flagY + flagSpeed + 'px';
 
       // Check if the flag is out of bounds and remove it
@@ -78,17 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Initial position and score update
-  updateMainCharacterPosition();
+  updateMainVictimPosition();
   updateScore();
 
   // Add event listener for keydown event
   document.addEventListener('keydown', (event) => {
-    if (event.key === "ArrowLeft" && characterX > 0) { 
-      characterX -= stepSize;
-    } else if (event.key === "ArrowRight" && characterX < windowWidth - mainCharacter.clientWidth) { 
-      characterX += stepSize;
+    if (event.key === "ArrowLeft" && victimX > 0) { 
+      victimX -= stepSize;
+    } else if (event.key === "ArrowRight" && victimX < windowWidth - mainVictim.clientWidth) { 
+      victimX += stepSize;
     } 
-    updateMainCharacterPosition();
+    updateMainVictimPosition();
   });
 
   // Function to create flags at random intervals
