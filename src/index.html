@@ -11,9 +11,14 @@
 </head>
 <body>
     <div id="start-screen">
-        <p>Welcome to a game with a meaningful purpose: protecting women from male species in the dating realm.
-         In this game, flags are categorized based on historical data, adding an extra layer of security.
-         For my personal retribution, some unique flags have been incorporated. So, dive in and enjoy the game to the fullest.</p>
+        <div class="game-description">
+            <p>Welcome to a game with a meaningful purpose: protecting women from male species in the dating realm.
+                In this game, flags are categorized based on historical data, adding an extra layer of security.
+                For my personal retribution, some unique flags have been incorporated. So, dive in and enjoy the game to the fullest.</p>
+            <p>This game is incredibly simple. Aim to evade as many red flags as you can while capturing the green ones.
+                If your score falls below 0, the likelihood of dying alone in the end increases.</p>
+        </div>
+        
         <div class="centered-start-button"><button class="start-button" onclick="switchScreens()">START</button></div>
     </div>
     <div id="game-screen">
@@ -25,6 +30,12 @@
     <div class="green-flags"></div>
     <div class="background"></div>
     <div class="victim main-victim"><span>Victim</span></div>
+    </div>
+    <div id="end-screen">
+        <div class="end-screen-text">
+        <p>GAME OVER!</p>
+        <p>You will probably die alone with your cats but don't worry cats are better than bad   boys</p>
+        </div>
     </div>
 </body>
 </html>

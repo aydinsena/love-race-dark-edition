@@ -11,10 +11,15 @@ body {
   display: block;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 1px;
-  font-weight: 400;
   margin: 200px;
 }
 
+.game-description {
+  margin: 0 400px;
+  font-weight: 400;
+  text-align: justify;
+
+}
 
 .centered-start-button {
   display: flex;
@@ -23,11 +28,11 @@ body {
 }
 
 .start-button {
-  background-color: #1b3647; 
+  background-color: black; 
   color: #fff; 
   font-size: 24px; 
-  padding: 25px 50px;
-  margin: 100px;
+  padding: 20px 40px;
+  margin: 50px;
   border: none; 
   border-radius: 8px; 
   cursor: pointer; 
@@ -35,17 +40,15 @@ body {
   
 }
 
-.start-button:hover {
-  background-color: black; 
-}
-
-
 #game-screen{
   display: none;
 }
 
-.end-screen {
+#end-screen {
   display: none;
+}
+.end-screen-text {
+  padding: 100px;
 }
 
 .red-flags, .green-flags {
