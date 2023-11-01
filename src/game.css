@@ -4,44 +4,21 @@ body {
   overflow: hidden;
 }
 
-
-body {
-  margin: 20px;
-  padding: 0;
-  overflow: hidden;
-}
-
-
-.main-character {
-  width: 80px;
-  height: 70px;
-  background: rgb(75, 7, 131);
-  position: absolute;  
-  bottom: 70px;  
-  left: 800px;
-  border-radius: 50%; 
-  }
-
-
 .red-flags, .green-flags {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.red-flag {
+.red-flag, .green-flag {
   width: 60px;
   height: 20px;
   background-color: #FF0000;
   clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
 }
 
-/* Green Flag */
 .green-flag {
-  width: 60px;
-  height: 20px;
   background-color: #00FF00;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 50%, 100% 0);
 }
 
 
@@ -71,21 +48,6 @@ body {
   border-radius: 50%; 
   }
 
-
-
-.character, .flag {
-  text-align: center;
-}
-
-.character > span, .flag > span {
-  position: absolute;
-  top: -30px;
-  left: 50%; 
-  transform: translateX(-50%); 
-  background: rgba(138, 91, 145, 0.623);
-  padding: 5px; 
-  border-radius: 5px; 
-}
 
   
   
