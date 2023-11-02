@@ -74,27 +74,27 @@ body {
   text-align: center;
 }
 
-.victim > span, .flag > span {
+.victim > p, .flag > span {
   position: absolute;
   top: -35px;
   left: 50%; 
   transform: translateX(-50%); 
   background: rgba(138, 91, 145, 0.623);
   border-radius: 5px; 
+  font-size: medium;
+  padding: 2px;
 }
 
   
 .main-victim {
-  width: 80px;
-  height: 70px;
-  background: rgb(75, 7, 131);
-  position: absolute;  
-  bottom: 70px;  
-  left: 800px;
-  border-radius: 50%; 
+  position: absolute;
+  bottom: 70px;
   }
 
+.victim-img {
+    width: 80px;
+  }
 
-  
-  
-  
+.game-over-img{
+    width: 500px;
+  }
