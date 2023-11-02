@@ -8,7 +8,7 @@ class Game {
     this.scoreElement = null;
     this.redFlagContainer = null;
     this.greenFlagContainer = null;
-    this.flagSpeed = 5;
+    this.flagSpeed = 10;
 
     // Initialize event listeners
     document.addEventListener('DOMContentLoaded', this.init.bind(this));
@@ -38,6 +38,18 @@ class Game {
       document.getElementById("game-screen").style.display = "none"
       document.getElementById("end-screen").style.display = "block";
     }
+  }
+
+  createRandomFlags() {
+    const randomTime = Math.floor(Math.random() * 1000);
+    setTimeout(() => {
+      if (Math.random() < 0.7) {
+        this.createFlag(this.redFlagContainer, 'red');
+      } else {
+        this.createFlag(this.greenFlagContainer, 'green');
+      }
+      this.createRandomFlags();
+    }, randomTime);
   }
 
   createFlag(container, type) {
@@ -92,17 +104,7 @@ class Game {
     this.updateMainVictimPosition();
   }
 
-  createRandomFlags() {
-    const randomTime = Math.floor(Math.random() * 1000) + 1000;
-    setTimeout(() => {
-      if (Math.random() < 0.5) {
-        this.createFlag(this.redFlagContainer, 'red');
-      } else {
-        this.createFlag(this.greenFlagContainer, 'green');
-      }
-      this.createRandomFlags();
-    }, randomTime);
-  }
+
 
 }
 
