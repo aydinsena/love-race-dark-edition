@@ -8,7 +8,7 @@ class Game {
     this.scoreElement = null;
     this.redFlagContainer = null;
     this.greenFlagContainer = null;
-    this.flagSpeed = 10;
+    this.flagSpeed = 5;
 
     // Initialize event listeners
     document.addEventListener('DOMContentLoaded', this.init.bind(this));
@@ -42,34 +42,95 @@ class Game {
 
   createRandomFlags() {
     const randomTime = Math.floor(Math.random() * 1000);
+    const flagsObj = {
+      red: [
+        {
+          img: "./images/barista.gif",
+          text: "australian barista",
+        },
+        {
+          img: "./images/dj.gif",
+          text: "dj",
+        },
+        {
+          img: "./images/manchild.gif",
+          text: "manchild",
+        },
+        {
+          img: "./images/peeing.gif",
+          text: "peeing standing up",
+        },
+        {
+          img: "./images/producer.gif",
+          text: "creative producer",
+        },
+        {
+          img: "./images/rude.gif",
+          text: "rude",
+        },
+      ],
+      green: [
+        {
+          img: "./images/honest.gif",
+          text: "honest",
+        },
+        {
+          img: "./images/funny.gif",
+          text: "funny",
+        },
+        {
+          img: "./images/respect.gif",
+          text: "respectful",
+        },
+        {
+          img: "./images/kind.gif",
+          text: "kind",
+        },
+      ],
+    }
+    
+    const randomGreenIndex = Math.floor(Math.random() * flagsObj.green.length)
+    const randomGreen = flagsObj.green[randomGreenIndex]
+
+    const randomRedIndex = Math.floor(Math.random() * flagsObj.red.length)
+    const randomRed = flagsObj.red[randomRedIndex]
+
+
     setTimeout(() => {
       if (Math.random() < 0.7) {
-        this.createFlag(this.redFlagContainer, 'red');
+        this.createFlag(this.redFlagContainer, 'red', randomRed.img, randomRed.text);
       } else {
-        this.createFlag(this.greenFlagContainer, 'green');
+        this.createFlag(this.greenFlagContainer, 'green', randomGreen.img, randomGreen.text);
       }
       this.createRandomFlags();
     }, randomTime);
   }
 
-  createFlag(container, type) {
+  createFlag(container, type, img, txt) {
     const flag = document.createElement('div');
+    const image = document.createElement('img');
+    image.style.width = "50px"
+    image.src = img;
+    const text = document.createTextNode(txt)
     flag.classList.add(`${type}-flag`, 'flag');
     const randomX = Math.floor(Math.random() * (this.windowWidth - 50));
     flag.style.left = `${randomX}px`;
     flag.style.top = '0';
+    flag.appendChild(image);
+    flag.appendChild(text);
     container.appendChild(flag);
     this.moveFlag(flag, type);
   }
 
   moveFlag(flag, type) {
     const flagInterval = setInterval(() => {
+      ///this will be executed every 10 seconds
       const flagY = parseInt(flag.style.top);
-      const flagX = parseInt(flag.style.left);
-
+      //returns information about the size and position of the element in the viewport.
       const victimRect = this.mainVictim.getBoundingClientRect();
       const flagRect = flag.getBoundingClientRect();
 
+      //check if colliding
       if (
         victimRect.right > flagRect.left &&
         victimRect.left < flagRect.right &&
@@ -103,8 +164,6 @@ class Game {
     }
     this.updateMainVictimPosition();
   }
-
-
 
 }
 

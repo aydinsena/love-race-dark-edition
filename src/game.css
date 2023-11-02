@@ -47,6 +47,7 @@ body {
 #end-screen {
   display: none;
 }
+
 .end-screen-text {
   padding: 100px;
 }
@@ -55,26 +56,16 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 120px;
+  display: flex;
 }
-
-.red-flag, .green-flag {
-  width: 60px;
-  height: 20px;
-  background-color: #FF0000;
-  clip-path: polygon(0 0, 100% 0, 75% 50%, 100% 100%, 0 100%);
-}
-
-.green-flag {
-  background-color: #00FF00;
-}
-
 
 .victim, .flag {
   position: relative;
   text-align: center;
 }
 
-.victim > p, .flag > span {
+.victim > p {
   position: absolute;
   top: -35px;
   left: 50%; 

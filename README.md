@@ -35,6 +35,4 @@ If you have any questions or need to reach out to me for support or inquiries, p
 
 ---
 
-[Include any additional information, special notes, or credits you'd like to add to your game's README.]
-
 Enjoy the game!
